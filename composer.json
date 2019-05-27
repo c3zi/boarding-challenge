@@ -18,7 +18,9 @@
             "PropertyFinder\\BoardingChallenge\\Tests\\": "tests/"
         }
     },
-    "require": {},
+    "require": {
+      "php": "^7.2"
+    },
     "require-dev": {
         "phpunit/phpunit": "^8"
     }

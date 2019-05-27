@@ -9,16 +9,16 @@ nor where it ends. Each boarding card contains information about seat assignment
 1. `departure` and `arrival` data are provided by an external DTO.              
 The API is responsible only for sorting and printing found routes.
 2. The API throws an internal PHP exception (RuntimeException) for simplicity.
-3. THE API does not use PHP docblock regarding to the PHP version (> 7.0) and type hinting.
-4. The boarding cards are unique. Cards can be filter in the step before the API.
+3. The API does not use PHP docblock regarding to the PHP version (> 7.0) and type hinting.
+4. The boarding cards are unique.
 
 ### Installation
 1. Make sure you're using PHP 7.1 or higher and have composer installed
-2. Clone repository: git clone https://github.com/c3zi/boarding-cards
+2. Clone repository: git clone https://github.com/c3zi/boarding-challenge
 3. Install all dependencies using composer: `composer install`
 
 ### Usage
-To run an example just execute `php app.php`
+To run an example just execute: `php app.php`
 
 ### Quality
 To run unit tests execute: `./vendor/bin/phpunit tests`
