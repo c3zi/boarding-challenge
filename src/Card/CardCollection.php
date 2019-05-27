@@ -23,7 +23,7 @@ class CardCollection implements IteratorAggregate, ArrayAccess, Countable
         return count($this->cards) === 0;
     }
 
-    public function getIterator()
+    public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->cards);
     }
@@ -49,12 +49,12 @@ class CardCollection implements IteratorAggregate, ArrayAccess, Countable
         unset($this->cards[$offset]);
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): ?CardInterface
     {
         return $this->cards[$offset] ?? null;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->cards);
     }
