@@ -30,11 +30,10 @@ class SimpleSort implements SortInterface
             $departures[$departure] = $card;
         }
 
-        [$firstIndex, $lastIndex] = $this->findFirstAndLastIndexes($mergedDepartureAndArrival);
+        $firstIndex = $this->findFirstCardInRoutePath($mergedDepartureAndArrival);
 
         $currentCard = $cards[$firstIndex];
-        $lastCard = $cards[$lastIndex];
-        unset($cards[$firstIndex], $cards[$lastIndex]);
+        unset($cards[$firstIndex]);
 
         $size = count($cards);
 
@@ -48,46 +47,33 @@ class SimpleSort implements SortInterface
                 throw new RuntimeException('Broken route path.');
             }
 
-            if (!$sorted->exists($departures[$arrival])) {
-                $sorted[] = $departures[$arrival];
-            }
-
+            $sorted[] = $departures[$arrival];
             $currentCard = $departures[$arrival];
             --$size;
         }
 
-        $sorted[] = $lastCard;
-
         return $sorted;
     }
 
-    private function findFirstAndLastIndexes(array $temp): array
+    private function findFirstCardInRoutePath(array $temp): int
     {
-        $firstIndex = null;
-        $lastIndex = null;
+        $first = null;
 
         foreach ($temp as $name => $details) {
             if (count($details) === 1) {
                 $index = $details[0]['index'];
 
                 if ($details[0]['type'] === 'departure') {
-                    $firstIndex = $index;
-                }
-
-                if ($details[0]['type'] === 'arrival') {
-                    $lastIndex = $index;
+                    $first = (int)$index;
+                    break;
                 }
             }
         }
 
-        if ($firstIndex === null) {
+        if ($first === null) {
             throw new RuntimeException('Could not find the first element.');
         }
 
-        if ($lastIndex === null) {
-            throw new RuntimeException('Could not find the last element.');
-        }
-
-        return [$firstIndex, $lastIndex];
+        return $first;
     }
 }

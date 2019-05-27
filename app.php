@@ -20,7 +20,7 @@ $cards = new CardCollection([
         'Gate 45B, seat 3A',
         'Baggage drop at ticket counter344'
     ),
-    new TrainCard('Valencia', 'Barcelona', '78A', '45B' ),
+
     new TrainCard('Poznan', 'Koszalin', '12B', '45B' ),
     new FlightCard(
         'Stockholm',
@@ -30,6 +30,13 @@ $cards = new CardCollection([
         'Baggage will we automatically transferred from your last leg'
     ),
     new AirportBus('Warsaw', 'Valencia'),
+    new TrainCard('Valencia', 'Barcelona', '78A', '45B' ),
+    new FlightCard(
+        'New York JFK',
+        'Warsaw',
+        'PL48',
+        'Gate 1, seat 1'
+    ),
 ]);
 
 $route = new RouteFinder($cards, new SimpleSort(), new ConsoleFormatter());
