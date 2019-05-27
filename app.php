@@ -10,12 +10,6 @@ use PropertyFinder\BoardingChallenge\Card\CardCollection;
 use PropertyFinder\BoardingChallenge\Route\RouteFinder;
 use PropertyFinder\BoardingChallenge\Formatter\ConsoleFormatter;
 
-// Assumption 1. The API assumes that `departure` and `arrival` names exist.
-//               The API is responsible only for sorting and printing found routes.
-// Assumption 2. The API throws an internal PHP exception (RuntimeException) for simplicity.
-// Assumption 3. THE API does not use PHP docblock regarding to the PHP version (> 7.0) and type hinting.
-// Assumption 4. The boarding cards are unique. Cards can be filter in the step before the API.
-
 $cards = new CardCollection([
     new AirportBus('Koszalin', 'Warsaw', '12'),
     new AirportBus('Barcelona', 'Gerona Airport', '45'),
