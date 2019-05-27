@@ -20,7 +20,6 @@ $cards = new CardCollection([
         'Gate 45B, seat 3A',
         'Baggage drop at ticket counter344'
     ),
-
     new TrainCard('Poznan', 'Koszalin', '12B', '45B' ),
     new FlightCard(
         'Stockholm',
