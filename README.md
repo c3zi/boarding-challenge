@@ -10,7 +10,7 @@ nor where it ends. Each boarding card contains information about seat assignment
 The API is responsible only for sorting and printing found routes.
 2. The API throws an internal PHP exception (RuntimeException) for simplicity.
 3. THE API does not use PHP docblock regarding to the PHP version (> 7.0) and type hinting.
-4. The boarding cards are unique.
+4. The boarding cards are unique. Cards can be filter in the step before the API.
 
 ### Installation
 1. Make sure you're using PHP 7.1 or higher and have composer installed
