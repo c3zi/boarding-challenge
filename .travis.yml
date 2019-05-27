@@ -3,7 +3,7 @@ sudo: false
 
 env:
   global:
-    - MIN_PHP=7.0
+    - MIN_PHP=7.1
 
 matrix:
   include:
