@@ -14,7 +14,7 @@ The API is responsible only for sorting and printing found routes.
 
 ### Installation
 1. Make sure you're using PHP 7.1 or higher and have composer installed
-2. Clone repository: git clone https://github.com/c3zi/boarding-cards
+2. Clone repository: git clone https://github.com/c3zi/boarding-challenge
 3. Install all dependencies using composer: `composer install`
 
 ### Usage
